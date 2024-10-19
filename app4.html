@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/sample.css">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+    <title>Card List</title>
+</head>
+<body>
+
+<div id="card-list">
+    <div class="card">
+        <div class="tab">
+            <div class="tab-menu4">
+                <div class="tab-menu__item4 tab-menu__item--active4" data-tab-menu-item="0">目的地</div>
+                <div class="tab-menu__item4" data-tab-menu-item="1">行き方</div>
+            </div>
+            <div class="tab-content">
+                <div class="tab-content__item4 tab-content__item--active4">
+                    <img class="card__imgframe" src="templates/玄関ホール.jpg" alt="玄関ホール">
+                    <div class="card__textbox">
+                        <div class="card__titletext">玄関ホール</div>
+                        <a href="./happy.html" class="btn btn--yellow btn--cubic">通過</a>
+                    </div>
+                </div>
+                <div class="tab-content__item4">
+                    <div class="scroll-container">
+                        <img class="card__imgframe2" src="templates/経路_6.png" alt="経路 6">
+                        <img class="card__imgframe2" src="templates/経路_7.png" alt="経路 7">
+                        <img class="card__imgframe2" src="templates/経路_8.png" alt="経路 8">
+                        <img class="card__imgframe2" src="templates/経路_9.png" alt="経路 9">
+                    </div>
+                    <div class="card__textbox">
+                        <div class="card__titletext">玄関ホール</div>
+                        <a href="./happy.html" class="btn btn--yellow btn--cubic">到着</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Initialize SortableJS for card sorting
+    new Sortable(document.getElementById('card-list'), {
+        animation: 150,
+        ghostClass: 'sortable-ghost',
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabMenus = document.querySelectorAll('.tab-menu4');
+        const tabContents = document.querySelectorAll('.tab-content__item4');
+
+        tabMenus.forEach(menu => {
+            const tabMenuItems = menu.querySelectorAll('.tab-menu__item4');
+            tabMenuItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    const activeMenu = menu.querySelector('.tab-menu__item--active4');
+                    if (activeMenu) activeMenu.classList.remove('tab-menu__item--active4');
+                    item.classList.add('tab-menu__item--active4');
+
+                    const activeContent = menu.parentElement.querySelector('.tab-content__item--active4');
+                    if (activeContent) activeContent.classList.remove('tab-content__item--active4');
+                    tabContents[index].classList.add('tab-content__item--active4');
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>

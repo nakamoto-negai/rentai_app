@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang ="ja">
+<link rel = "stylesheet" href="css/sample.css">
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js">
+  resizeTo(800,600);
+</script>
+<div id="card-list">
+
+  
+<div class="card">
+  <div class="tab">
+    <div class="tab-menu3">
+      <div class="tab-menu__item3 tab-menu__item--active3" data-tab-menu-item="0">目的地</div>
+      <div class="tab-menu__item3" data-tab-menu-item="1">行き方</div>
+    </div>
+    <div class="tab-content">
+      <div class="tab-content__item3 tab-content__item--active3">
+        <img class = "card__imgframe" src="templates\N4-216教室前.jpg">
+        <div class="card__textbox">
+          <div class="card__titletext">
+            N4-216教室前
+          </div>
+          <a href = ".\app4.html" class = "btn btn--yellow btn--cubic">通過</a>
+          
+          </select>
+        </div>
+      </div>
+      <div class="tab-content__item3">
+        <div class="scroll-container">
+          <img class = "card__imgframe2" src="templates\経路_4.png">
+          <img class = "card__imgframe2" src="templates\経路_5.png">
+        </div>
+        
+        <div class="card__textbox">
+          <div class="card__titletext">
+            N4-216教室前
+          </div>
+          <a href = ".\app4.html" class = "btn btn--yellow btn--cubic">通過</a>
+          
+          </select>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="tab">
+    <div class="tab-menu4">
+      <div class="tab-menu__item4 tab-menu__item--active4" data-tab-menu-item="0">目的地</div>
+      <div class="tab-menu__item4" data-tab-menu-item="1">行き方</div>
+    </div>
+    <div class="tab-content">
+      <div class="tab-content__item4 tab-content__item--active4">
+        <img class = "card__imgframe" src="templates\玄関ホール.jpg">
+        <div class="card__textbox">
+          <div class="card__titletext">
+            玄関ホール
+          </div>
+          <a href = "#" class = "btn btn--yellow btn--cubic">通過</a>
+          
+          </select>
+        </div>
+      </div>
+      <div class="tab-content__item4">
+        <div class="scroll-container">
+          <img class = "card__imgframe2" src="templates\経路_6.png">
+          <img class = "card__imgframe2" src="templates\経路_7.png">
+          <img class = "card__imgframe2" src="templates\経路_8.png">
+          <img class = "card__imgframe2" src="templates\経路_9.png">
+        </div>
+        
+        <div class="card__textbox">
+          <div class="card__titletext">
+            玄関ホール
+          </div>
+          <a href = "#" class = "btn btn--yellow btn--cubic">到着</a>
+          
+          </select>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+  // SortableJS を使ってカードを並び替え可能にする
+  new Sortable(document.getElementById('card-list'), {
+    animation: 150,  // ドラッグ中のアニメーションの速度（ミリ秒）
+    ghostClass: 'sortable-ghost',  // ドラッグ中のカードのスタイル
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+  const tabMenuItems = document.querySelectorAll('.tab-menu__item1');
+  const tabContentItems = document.querySelectorAll('.tab-content__item1');
+
+  tabMenuItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      document.querySelector('.tab-menu__item--active1').classList.remove('tab-menu__item--active1');
+      document.querySelector('.tab-content__item--active1').classList.remove('tab-content__item--active1');
+
+      item.classList.add('tab-menu__item--active1');
+      tabContentItems[index].classList.add('tab-content__item--active1');
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const tabMenuItems = document.querySelectorAll('.tab-menu__item2');
+  const tabContentItems = document.querySelectorAll('.tab-content__item2');
+
+  tabMenuItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      document.querySelector('.tab-menu__item--active2').classList.remove('tab-menu__item--active2');
+      document.querySelector('.tab-content__item--active2').classList.remove('tab-content__item--active2');
+
+      item.classList.add('tab-menu__item--active2');
+      tabContentItems[index].classList.add('tab-content__item--active2');
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const tabMenuItems = document.querySelectorAll('.tab-menu__item3');
+  const tabContentItems = document.querySelectorAll('.tab-content__item3');
+
+  tabMenuItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      document.querySelector('.tab-menu__item--active3').classList.remove('tab-menu__item--active3');
+      document.querySelector('.tab-content__item--active3').classList.remove('tab-content__item--active3');
+
+      item.classList.add('tab-menu__item--active3');
+      tabContentItems[index].classList.add('tab-content__item--active3');
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const tabMenuItems = document.querySelectorAll('.tab-menu__item4');
+  const tabContentItems = document.querySelectorAll('.tab-content__item4');
+
+  tabMenuItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      document.querySelector('.tab-menu__item--active4').classList.remove('tab-menu__item--active4');
+      document.querySelector('.tab-content__item--active4').classList.remove('tab-content__item--active4');
+
+      item.classList.add('tab-menu__item--active4');
+      tabContentItems[index].classList.add('tab-content__item--active4');
+    });
+  });
+});
+
+  function expandCard() {
+            var expandedCard = document.getElementById('expandedCard');
+            expandedCard.style.display = 'inline-block';
+        }
+
+  
+
+</script>
+</html>
